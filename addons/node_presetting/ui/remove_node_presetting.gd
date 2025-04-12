@@ -52,7 +52,6 @@ func _on_remove_menu_button_about_to_popup() -> void:
 		if not files.is_empty():
 			popup.add_separator(i)
 			_id += 1
-			continue
 
 		for f : String in files:
 			popup.add_item(f.get_basename(), _id)
