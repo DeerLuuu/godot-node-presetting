@@ -45,19 +45,19 @@ func _on_menu_about_to_popup() -> void:
 	popup.add_item("删除预设", 1001)
 	popup.add_separator("节点预设")
 
-	var dir = DirAccess.open("res://node_presettings/")
+	var dir = DirAccess.open("res://addons/node_presetting/config/")
 	var dirs : Array = dir.get_directories()
 	var _files_path : Dictionary
 	var _id : int = 0
 
 	for i in dirs:
 		if i != node_class_name: continue
-		var files : Array = dir.open("res://node_presettings/%s" % i).get_files()
+		var files : Array = dir.open("res://addons/node_presetting/config/%s" % i).get_files()
 
 		for f : String in files:
 			popup.add_item(f.get_basename(), _id)
 
-			_files_path[_id] = "res://node_presettings/" + i + "/" + f
+			_files_path[_id] = "res://addons/node_presetting/config/" + i + "/" + f
 			_id += 1
 	files_path = _files_path
 
@@ -85,10 +85,10 @@ func _on_menu_button_popup_index_pressed(id : int) -> void:
 
 # 添加节点预设提交信号触发方法
 func _on_add_node_presetting_submit_name(_name : String) -> void:
-	if not DirAccess.dir_exists_absolute("res://node_presettings"):
-		DirAccess.make_dir_absolute("res://node_presettings")
-	if not DirAccess.dir_exists_absolute("res://node_presettings/%s" % node_class_name):
-		DirAccess.make_dir_absolute("res://node_presettings/%s" % node_class_name)
+	if not DirAccess.dir_exists_absolute("res://addons/node_presetting/config/"):
+		DirAccess.make_dir_absolute("res://addons/node_presetting/config/")
+	if not DirAccess.dir_exists_absolute("res://addons/node_presetting/config/%s" % node_class_name):
+		DirAccess.make_dir_absolute("res://addons/node_presetting/config/%s" % node_class_name)
 
 	node_data.clear()
 
@@ -106,7 +106,7 @@ func _on_add_node_presetting_submit_name(_name : String) -> void:
 
 	var node_config : NodeConfig = NodeConfig.new()
 	node_config.node_data = node_data
-	ResourceSaver.save(node_config, "res://node_presettings/%s/%s.tres" % [node_class_name, _name])
+	ResourceSaver.save(node_config, "res://addons/node_presetting/config/%s/%s.tres" % [node_class_name, _name])
 
 	get_editor_interface().get_resource_filesystem().scan()
 
