@@ -45,6 +45,7 @@ func _on_menu_about_to_popup() -> void:
 	popup.add_item("删除预设", 1001)
 	popup.add_separator("节点预设")
 
+	if not DirAccess.dir_exists_absolute("res://addons/node_presetting/config/"): return
 	var dir = DirAccess.open("res://addons/node_presetting/config/")
 	var dirs : Array = dir.get_directories()
 	var _files_path : Dictionary
