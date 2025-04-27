@@ -1,3 +1,4 @@
+![image](https://github.com/DeerLuuu/godot-node-presetting/blob/main/addons/node_presetting/icon/icon.png)
 # godot-node-presetting
 A Godot node property default plugin, similar to Unity's Presets
 ## Getting Started (GDScript)
