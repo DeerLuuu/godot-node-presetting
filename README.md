@@ -1,11 +1,11 @@
 ![image](https://github.com/DeerLuuu/godot-node-presetting/blob/main/addons/node_presetting/icon/icon.png)
 # godot-node-presetting
-A Godot node property default plugin, similar to Unity's Presets
-## Getting Started (GDScript)
+一个Godot的节点预设插件，类似Unity的PreSets。
+### 入门
 
-1. [Install the plugin](https://docs.godotengine.org/en/stable/tutorials/plugins/editor/installing_plugins.html) by copying over the `addons` folder from the full package.
+1. [安装插件](https://docs.godotengine.org/en/stable/tutorials/plugins/editor/installing_plugins.html) 通过复制 'addons' 文件夹到你的包中。
 
-2. Enable the plugin in `Project > Project Settings > Plugins`.
+2. 启动插件： `Project > Project Settings > Plugins`.
 ---
 
 ![image](https://github.com/DeerLuuu/godot-node-presetting/blob/main/preview1.png)
